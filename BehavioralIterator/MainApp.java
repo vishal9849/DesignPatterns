@@ -10,11 +10,7 @@ public class MainApp {
         Iterator<String> iterator = aggregate.createIterator();
 
         while (iterator.hasNext()) {
-            try {
-                System.out.println(iterator.next());
-            } catch (NoSuchFieldException e) {
-                throw new RuntimeException(e);
-            }
+            System.out.println(iterator.next());
         }
     }
 }

@@ -18,11 +18,15 @@ public class ConcreteIterator<T> implements Iterator{
     }
 
     @Override
-    public Object next() throws NoSuchFieldException {
+    public Object next() {
         if (hasNext()) {
             return collection.get(index++);
         }else{
-            throw new NoSuchFieldException();
+            try {
+                throw new NoSuchFieldException();
+            } catch (NoSuchFieldException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 }
